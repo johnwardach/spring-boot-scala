@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '1.5.3.RELEASE'
+}
+
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "com.example.SpringBootScalaApplication"
+
+ext {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+jar {
+    baseName = 'spring-boot-scala'
+    version =  '0.0.1'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    compile "org.scala-lang:scala-library:2.12.2"
+    testCompile "junit:junit"
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
